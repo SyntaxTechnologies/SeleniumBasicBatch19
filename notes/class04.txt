@@ -1,0 +1,27 @@
+
+
+isEnabled()--> check if the radio button can be selected or not  (if not selectable usually it is greyed out.
+isDisplayed() --> checks if the webElment is displayed on the page or not
+isSelected()-->checks if the radio button is selected or not (return true if selected)
+clear()
+
+
+
+
+Approach to select the single checkbox:
+
+ Inspect the checkbox.
+ Write down the correct locator in the DOM.
+ Use findElement to find the checkbox.
+ Click on it.
+ If you want to check whether the checkbox is selected or not:
+
+ checkbox.isSelected(); // returns true if selected
+ Preferred approach for selecting multiple checkboxes:
+
+ Inspect them in the DOM.
+ Write the locator in such a way that it is able to select all the required checkboxes.
+ Use findElements to get all those checkboxes.
+ Iterate through the list.
+ While iterating, look for your desired checkbox (inspect the DOM to see which information provides you the indication that this is your desired checkbox).
+ Use an if statement to make the selection.
