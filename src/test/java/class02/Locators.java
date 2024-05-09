@@ -11,7 +11,7 @@ send your password
 click on login button
  */
 public class Locators {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
 
         driver.manage().window().maximize();
@@ -41,6 +41,9 @@ goto fb.com and click on create new account
 //       using partial link text
         WebElement createAccount = driver.findElement(By.partialLinkText("account"));
         createAccount.click();
+  Thread.sleep(2000);
+        WebElement name = driver.findElement(By.xpath("//input[@name='firstname']"));
+        name.sendKeys("asafdsfds");
 
     }
 }

@@ -1,0 +1,35 @@
+..............................................Drop Down.....................................................
+
+ Drop Down:
+
+ Two types:
+
+ Single select
+ Multi-select
+ When it comes to drop-downs, we have a class in Selenium that helps us interact with them:
+
+ Select class - in order to be able to use this class, your dropdown must be made in the DOM using the SELECT tag.
+ Single Select Drop Down Approach:
+
+ Inspect the dropdown.
+ Check if it has the SELECT tag.
+ Write down the locator to find the WebElement dropdown.
+ Declare an object of the Select class (pass the WebElement in the parameters).
+ Use methods from the Select class to select the desired option:
+ selectByVisibleText();
+ selectByValue();
+ selectByIndex();
+
+
+ Multi-Select Drop Down Approach:
+
+ Inspect the dropdown.
+ Check if it has the SELECT tag.
+ Write down the locator to find the WebElement dropdown.
+ Declare an object of the Select class (pass the WebElement in the parameters).
+ Use methods to select the desired option:
+ selectByVisibleText();
+ selectByValue();
+ selectByIndex();
+ You can also use deselect methods in case of a multi-select dropdown.
+ To check if the dropdown is multi-select or not, you can use the isMultiple() method, which returns a boolean true if it is a multi-select dropdown.
