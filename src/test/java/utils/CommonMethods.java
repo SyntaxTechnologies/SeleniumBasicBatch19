@@ -1,9 +1,11 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.io.IOException;
 
@@ -29,10 +31,26 @@ public class CommonMethods {
         driver.get(ConfigReader.read("url"));
     }
 
-//    as HW:
-//    create
-//    methods
-//    close browser
-//    select from drop down
+    public static void closeBrowser(){
+        if(driver!=null){
+        driver.quit();
+        }
+    }
+
+    public  static  void selectFromDropDown(WebElement dropDown,int index){
+        Select sel=new Select(dropDown);
+        sel.selectByIndex(index);
+    }
+    public  static  void selectFromDropDown(WebElement dropDown,String visibleText){
+        Select sel=new Select(dropDown);
+        sel.selectByVisibleText(visibleText);
+    }
+
+    public  static  void selectFromDropDown(String value, WebElement dropDown){
+        Select sel=new Select(dropDown);
+        sel.selectByValue(value);
+    }
+
+
 
 }

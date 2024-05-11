@@ -27,11 +27,6 @@ public class DDReview {
                 option.click();
                 break;
             }
-
-
         }
-
-
-
     }
 }
