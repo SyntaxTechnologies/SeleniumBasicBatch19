@@ -1,0 +1,75 @@
+
+How to handle Calendars:
+1. click on the calendar
+2. locate the month and get the text
+3. if the desired text is not visible --> we will keep clicking on next and keep updating text
+4. as soon as we found our desired month --> grab all cells from the table
+5. Loop through the cells
+6. once the cell value is matched with our condition --> click on the matched date
+
+Why do we need screenshots in testing?
+in testing it is very important to take screenshots in order to prove the our test case
+covered certain functionality
+
+--------------------------
+ Js executor
+
+
+ u can perform alot of various actions using js executor
+
+ 1.click
+ 2.scroll
+ 3.hihlight
+ 4.drag and drop
+
+
+
+approach:
+declaration
+ 1. JavaScript Executor js=(javaScriptExecutor)driver;
+
+ call the method of scipt
+
+ 2. js.executescript("")
+
+
+
+
+ -------------------------------------------------------------------------------
+ action class
+
+1. click
+2.rightclick
+2.draganddrop
+3.hover
+4.scroll
+
+
+Approach:
+
+1.declaration
+
+ Actions action= new Actions (driver)
+
+2.action.choose ur action.perform();
+
+   action.draganddrop().perform();
+
+
+
+----------------------------------------------------------------------------
+upload file
+
+
+
+can u upload a file through window popup in selenium
+ no. cant handle in selenium
+
+
+
+1. find the WebElement to which u want to uplaod the file  (lets say the button that uplaod the file)
+
+2. WebElement.sendKeys(path)-->path is the path to ur file that u want to uplaod .
+
+extension---> any extension that is there depending on the origin of the file
+
