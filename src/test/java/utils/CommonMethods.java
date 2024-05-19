@@ -5,9 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class CommonMethods {
 
@@ -27,6 +30,8 @@ public class CommonMethods {
             default:
                 throw new RuntimeException("Invalid Browser Name");
         }
+//        impicit wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
         driver.get(ConfigReader.read("url"));
     }
@@ -50,6 +55,34 @@ public class CommonMethods {
         Select sel=new Select(dropDown);
         sel.selectByValue(value);
     }
+
+    public static void sendText(String text,WebElement element){
+//        clear the text box
+        element.clear();
+//        send the text to element
+        element.sendKeys(text);
+    }
+
+
+    public  static  WebDriverWait getwait(){
+    WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(20));
+    return  wait;
+    }
+
+    public static void waitForElementToBeClickable(WebElement element){
+        getwait().until(ExpectedConditions.elementToBeClickable(element));
+
+    }
+
+    public static void click(WebElement element){
+        waitForElementToBeClickable(element);
+        element.click();
+    }
+
+    //take screenshot
+    //checkboxes
+    //radiobuttons
+    //jsclick
 
 
 
